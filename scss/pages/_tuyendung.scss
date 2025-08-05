@@ -1,0 +1,94 @@
+.list-tuyendung{
+	padding: 50px 0;
+	font-family: fmain;
+	background: url(../img/bg-tuyendung.jpg) no-repeat left bottom;
+	.search-td{
+		input{
+			width: 100%;
+			height: 50px;
+			padding: 15px;
+			background: #d9d9d9;
+			outline: 0;
+			border:0;
+			@include transition($t); 
+			&:focus{
+				background: #e4e4e4;
+				@include transition($t); 
+			}
+		}
+	}
+	.inner-list-td{
+		.top{
+			margin-top: 40px;
+			margin-bottom: 30px;
+			h4{
+				color: $green-cl-dark;
+				text-transform: uppercase;
+				font-size: 18px;
+				line-height: 24px;
+				margin-bottom: 0;
+			}
+		}
+		.list{
+			.item{
+				border-bottom: 1px solid #b3b3b3;
+				.i_top{
+					position: relative;
+					padding: 15px 0;
+					p{
+						margin-bottom: 0;
+					}
+					&:after{
+						content: "\f105";
+						font-family: fa;
+						font-size: 18px;
+						color: #a3a3a3;
+						position: absolute;
+						right: 0;
+						top:15px;
+						@include transition($t); 
+					}
+					.last{
+						p{
+							padding-right: 30px;
+						}
+					}
+				}
+				.i_content{
+					font-family: arial;
+					display: none;
+					padding: 10px 0 30px 0;
+					p{
+						margin-bottom: 4px;
+					}
+				}
+				&.active{
+					.i_top{
+						&:after{
+							@include transform(rotate(90deg));
+							@include transition($t); 
+						}
+					}
+				}
+			}
+		}
+	}
+	.btn-main{
+		margin-top: 30px;
+	}
+	@include desktop{
+		background-size: 40%;
+	}
+	@include mobile{
+		padding: 40px 0;
+		.inner-list-td{
+			.top{
+				margin-top: 30px;
+				margin-bottom: 20px;
+				h4{
+					font-size: 16px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,242 @@
+.oem{
+    .section1{
+    	background: #0b2741;
+    	padding-top: 60px;
+    	padding-bottom: 30px;
+    	position: relative;
+    	&:after{
+			content: "";
+			width: 100%;
+			height: 46px;
+			background: url(../img/linebottom2-blue.png) no-repeat center;
+			-webkit-background-size: cover;
+			background-size: cover;
+			position: absolute;
+			bottom:-46px;
+			left:0;
+		}
+        .textbox{
+            .title{
+                @include text(96px,ic,86px,$green-cl-text,uppercase);
+            }
+            .line1{
+            	margin: 20px auto;
+            }
+            p{
+            	@include text(26px,fmain,46px,#fff,none);
+            }
+            .line2{
+            	margin: 40px auto;
+            }
+            .t-small{
+            	@include text(40px,ic,46px,#1fb5ed,uppercase);
+            }
+        }
+    }
+    .section2{
+    	padding: 100px 0;
+    	.title{
+    		@include text(40px,ab,52px,$green-cl-text,uppercase);
+    		margin-bottom: 40px;
+    	}
+    	.listbox{
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			flex-wrap: wrap;
+			.boxline{
+				width: 33.333333%;
+				margin: 20px auto;
+				padding-right: 70px;
+				p{
+					@include text($fz-text,fmain,28px,$text-cl,none);
+				}
+				.btn-main{
+					float: left;
+					display: inline-block;
+				}
+			}
+    	}
+    }
+    .section3{
+    	padding: 30px 0 50px 0;
+		background: url(../img/bg-canhtac.jpg) repeat center;
+		background-size: cover;
+		position: relative;
+		&:before{
+			content: "";
+			width: 100%;
+			height: 40px;
+			background: url(../img/linetop-blue.png) no-repeat center;
+			background-size: cover;
+			position: absolute;
+			left:0;
+			top:-40px;
+			z-index: 1;
+		}
+		&:after{
+			content: "";
+			width: 100%;
+			height: 40px;
+			background: url(../img/linebottom-blue.png) no-repeat center;
+			background-size: cover;
+			position: absolute;
+			left:0;
+			bottom:-40px;
+			z-index: 1;
+		}
+		.listbox{
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 40px;
+			.box{
+				width: 33.333333%;
+				margin: 20px auto;
+				padding-right: 130px;
+				position: relative;
+				.dotted{
+					@include text($fz-text,fmain,28px,#fff8d4,none);
+					padding-left: 20px;
+					&:before{
+						content: "";
+						width: 10px;
+						height: 10px;
+						border-radius: 50%;
+						background: #f6db00;
+						position: absolute;
+						top:10px;
+						left: 0;
+					}
+				}
+				.btn-main{
+					float: left;
+					display: inline-block;
+				}
+			}
+		}
+		.gallery{
+			overflow: hidden;
+			.rimg{
+				@include mid-flex();
+				.img2{
+					width: 59%;
+				}
+				.img3{
+					width: 41%;
+				}
+			}
+			img{
+				max-width: 100%;
+				margin: 14px;
+			}
+		}
+    }
+    @include desktop{
+    	.section3{
+	    	.gallery{
+	    		img{
+	    			margin: 7.5px;
+	    		}
+	    	}
+	    }
+    }
+    @include tablet{
+    	.section1{
+	    	.textbox{
+	            .title{
+	                font-size: 82px;
+	                line-height: 76px;
+	            }
+	            .line1{
+	            	margin: 15px auto;
+	            }
+	            p{
+	            	font-size: 22px;
+	            	line-height: 38px;
+	            }
+	            .line2{
+	            	margin: 30px auto;
+	            }
+	            .t-small{
+	            	font-size: 36px;
+	            	line-height: 44px;
+	            }
+	        }
+	    }
+	    .section2{
+	    	.listbox{
+	    		.boxline{
+	    			padding-right: 30px;
+	    		}	
+	    	}
+	    }
+	    .section3{
+	    	.listbox{
+	    		.box{
+	    			padding-right: 40px;
+	    		}
+	    	}
+	    }
+    }
+    @include mobile{
+		.section1{
+			padding-top: 40px;
+			padding-bottom: 0px;
+	    	.textbox{
+	            .title{
+	                font-size: 54px;
+	                line-height: 58px;
+	            }
+	            .line1{
+	            	margin: 10px auto;
+	            }
+	            p{
+	            	font-size: 20px;
+	            	line-height: 34px;
+	            }
+	            .line2{
+	            	margin: 20px auto;
+	            }
+	            .t-small{
+            	    font-size: 34px;
+					line-height: 42px;
+	            }
+	        }
+	    }
+	    .section2{
+	    	padding: 80px 0;
+	    	.title{
+	    		font-size: 28px;
+    			line-height: 40px;
+	    		margin-bottom: 20px;
+	    	}
+	    	.listbox{
+	    		.boxline{
+	    			width:100%;
+	    			padding-right: 0px;
+	    			margin: 15px auto;
+	    		}	
+	    	}
+	    }
+	    .section3{
+	    	padding: 0px 0 50px 0;
+	    	.listbox{
+	    		.box{
+	    			width: 100%;
+	    			margin: 10px auto;
+	    		}
+	    	}
+	    	.gallery{
+	    		img{
+	    			margin: 5px;
+	    		}
+	    	}
+	    }
+    }
+}

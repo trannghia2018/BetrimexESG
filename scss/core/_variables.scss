@@ -1,0 +1,84 @@
+/*BASICS*/
+
+/*primary colors*/
+$main-cl: #013768;
+$main-cl-dark: #002f58;
+
+$brown-cl: #8e4a02;
+
+$blue-cl: #4694a0;
+$blue-cl-dark: #1f6873;
+
+$yellow-cl: #ffefb7;
+$yellow2-cl: #fff600;
+$yellow-cl-dark: #f8e245;
+
+
+$green-cl: #aade41;
+$green2-cl: #baff00;
+$green-cl-dark: #91c130;
+$green-cl-text: #537200;
+
+$red-cl: #e22126;
+$red-cl-dark: #bf0900;
+
+$gray-cl: #8a8d8f;
+$border-cl: #ddd;
+
+$color-line: #ddd;
+
+/*global text color*/
+$text-cl: #131313;
+$green-text-cl: #7c8d00;
+
+/*global bg color*/
+$main-bg-cl: #fff;
+$gray-bg-cl: #fafafa;
+
+// time transition
+$t: 0.3s;
+/*font families*/
+$font-stack: 'Open Sans', sans-serif;
+
+/*headings typo*/
+$fz-text: 14px;
+$lh-text: 24px;
+$font-size-h1: 2em;
+$font-size-h2: 1.8em;
+$font-size-h3: 1.4em;
+$font-size-h4: 1.2em;
+$font-size-h5: 1em;
+$font-size-h6: 0.875em;
+
+$font-size-body: 14px;
+$line-height-body: 24px;
+
+
+$heading-font-family: $font-stack;
+
+
+/*GRID - media queries breakpoints*/
+$xxs-min: 420px;
+$xs-min: 768px;
+$sm-min: 992px;
+$md-min: 1200px;
+$sc-mobile: 800px;
+
+$xxs-max: (
+    $xxs-min - 1
+);
+$xs-max: (
+    $xs-min - 1
+);
+$sm-max: (
+    $sm-min - 1
+);
+$md-max: (
+    $md-min - 1
+);
+
+$container-max-width: 100%;
+
+/*BOXED LAYOUT*/
+$boxed-layout-max-width-large: 1200px;
+$boxed-layout-max-width: 1060px;

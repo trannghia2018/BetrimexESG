@@ -1,0 +1,34 @@
+// .flickity-enabled {
+//     outline: 0;
+// }
+
+// /* flickity-fade */
+
+// .flickity-enabled.is-fade .flickity-slider>* {
+//     pointer-events: none;
+//     z-index: 0;
+// }
+
+// .flickity-enabled.is-fade .flickity-slider>.is-selected {
+//     pointer-events: auto;
+//     opacity: 1 !important;
+//     z-index: 1;
+//     @include transition(0.5s opacity);
+// }
+
+// html.lenis,
+// html.lenis body {
+//     height: auto
+// }
+
+// .lenis.lenis-smooth [data-lenis-prevent] {
+//     overscroll-behavior: contain
+// }
+
+// .lenis.lenis-stopped {
+//     overflow: clip
+// }
+
+// .lenis.lenis-smooth iframe {
+//     pointer-events: none
+// }

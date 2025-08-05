@@ -1,0 +1,159 @@
+.loading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 998;
+    background: #fff;
+    display: block;
+
+    .line {
+        height: 2px;
+        background: #000;
+        position: absolute;
+        top: 50%;
+        @include transform(translateY(-50%));
+        z-index: 900;
+        -webkit-animation: expandLine 3.0s infinite cubic-bezier(.62, .28, .23, .99) both;
+        animation: expandLine 3.0s infinite cubic-bezier(.62, .28, .23, .99) both;
+    }
+
+    .three-balls {
+        margin: 0 auto;
+        width: 70px;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 45%;
+    }
+
+    .three-balls .ball {
+        position: relative;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+        -webkit-animation: bouncedelay 3.0s infinite cubic-bezier(.62, .28, .23, .99) both;
+        animation: bouncedelay 3.0s infinite cubic-bezier(.62, .28, .23, .99) both;
+    }
+
+    .three-balls .ball1 {
+        -webkit-animation-delay: -.16s;
+        animation-delay: -.16s;
+    }
+
+    .three-balls .ball2 {
+        -webkit-animation-delay: -.08s;
+        animation-delay: -.08s;
+    }
+
+    @-webkit-keyframes expandLine {
+        0% {
+            width: 0;
+            @include transform(translateX(0%) translateY(-50%));
+        }
+
+        50% {
+            width: 90%;
+            @include transform(translateX(0%) translateY(-50%));
+        }
+
+        100% {
+            width: 100%;
+            @include transform(translateX(100%) translateY(-50%));
+        }
+    }
+
+    @keyframes expandLine {
+        0% {
+            width: 0;
+            @include transform(translateX(0%) translateY(-50%));
+        }
+
+        50% {
+            width: 90%;
+            @include transform(translateX(0%) translateY(-50%));
+        }
+
+        100% {
+            width: 100%;
+            @include transform(translateX(100%) translateY(-50%));
+        }
+    }
+
+    @keyframes bouncedelay {
+        0% {
+            bottom: 0;
+            background-color: $main-cl;
+        }
+
+        16.66% {
+            bottom: 40px;
+            background-color: $main-cl;
+        }
+
+        33.33% {
+            bottom: 0px;
+            background-color: $main-cl;
+        }
+
+        50% {
+            bottom: 40px;
+            background-color: $main-cl;
+        }
+
+        66.66% {
+            bottom: 0px;
+            background-color: $main-cl;
+        }
+
+        83.33% {
+            bottom: 40px;
+            background-color: $main-cl;
+        }
+
+        100% {
+            bottom: 0;
+            background-color: $main-cl;
+        }
+    }
+
+    @-webkit-keyframes bouncedelay {
+        0% {
+            bottom: 0;
+            background-color: $main-cl;
+        }
+
+        16.66% {
+            bottom: 40px;
+            background-color: $main-cl;
+        }
+
+        33.33% {
+            bottom: 0px;
+            background-color: $main-cl;
+        }
+
+        50% {
+            bottom: 40px;
+            background-color: $main-cl;
+        }
+
+        66.66% {
+            bottom: 0px;
+            background-color: $main-cl;
+        }
+
+        83.33% {
+            bottom: 40px;
+            background-color: $main-cl;
+        }
+
+        100% {
+            bottom: 0;
+            background-color: $main-cl;
+        }
+    }
+}

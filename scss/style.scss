@@ -1,0 +1,26 @@
+// Core
+@import "core/variables";
+@import "core/mixins";
+// @import "core/fonts";
+@import "core/elements";
+@import "core/components";
+@import "core/layouts";
+@import "core/header";
+@import "core/header_mobile";
+@import "core/footer";
+@import "core/loading";
+
+// Pages
+@import "pages/home";
+@import "pages/about";
+@import "pages/article_detail";
+@import "pages/contact";
+@import "pages/facilities";
+@import "pages/factory";
+@import "pages/material";
+@import "pages/media";
+@import "pages/oem";
+@import "pages/phanphoi";
+@import "pages/products";
+@import "pages/tuyendung";
+@import "pages/esg";

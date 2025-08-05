@@ -1,0 +1,382 @@
+// MIXINS
+// Laptop lớn, screen <= 1440px (tuỳ yêu cầu thiết kế)
+@mixin fullhd {
+	@media screen and (max-width: 1920px) {
+		@content;
+	}
+}
+
+@mixin lgX {
+	@media screen and (max-width: 1680px) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media screen and (max-width: 1440px) {
+		@content;
+	}
+}
+
+@mixin mdX {
+	@media screen and (max-width: 1366.98px) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media screen and (max-width: 1279.98px) {
+		@content;
+	}
+}
+
+// Tablets vừa, screen <= 992px
+@mixin sm {
+	@media screen and (max-width: 991.98px) {
+		@content;
+	}
+}
+
+// Tablets nhỏ hoặc Phones quay ngang, screen < 768px
+@mixin xs {
+	@media screen and (max-width: 767.98px) {
+		@content;
+	}
+}
+
+// Phones lớn, screen < 576px
+// @mixin xxs {
+// 	@media screen and (max-width: 575.98px) {
+// 		@content;
+// 	}
+// }
+
+@mixin xxs {
+	@media screen and (max-width: 560px) {
+		@content;
+	}
+}
+
+// Phones nhỏ, screen < 376px - tuỳ yêu cầu
+// @mixin xxxs {
+// 	@media screen and (max-width: 375.98px) {
+// 		@content;
+// 	}
+// }
+@mixin xxxs {
+	@media screen and (max-width: 430px) {
+		@content;
+	}
+}
+
+// Landscape
+@mixin landscape {
+	@media screen and (orientation: landscape) {
+		@content;
+	}
+}
+
+// @media max, min
+@mixin maxW($args) {
+	@media (max-width: $args) {
+		@content;
+	}
+}
+
+@mixin minW($args) {
+	@media (min-width: $args) {
+		@content;
+	}
+}
+
+@mixin minH($args) {
+	@media (min-height: $args) {
+		@content;
+	}
+}
+
+@mixin maxH($args) {
+	@media (max-height: $args) {
+		@content;
+	}
+}
+
+// CSS Animation - Transition
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+@mixin safari {
+	@media not all and (min-resolution: 0.001dpcm) {
+		@supports (-webkit-appearance: none) {
+			@content;
+		}
+	}
+}
+
+@mixin firefox($istrue: true) {
+	@if ($istrue) {
+		@supports (-moz-appearance: none) {
+			@content;
+		}
+	}
+
+	@else {
+		@supports not (-moz-appearance: none) {
+			@content;
+		}
+	}
+}
+
+@mixin animation($str) {
+	animation: #{$str};
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+}
+
+@mixin animation-delay($str) {
+	animation-delay: #{$str};
+	-webkit-animation-delay: #{$str};
+	-moz-animation-delay: #{$str};
+	-ms-animation-delay: #{$str};
+	-o-animation-delay: #{$str};
+}
+
+@mixin transform($args) {
+	transform: $args;
+	-webkit-transform: $args;
+	-moz-transform: $args;
+	-ms-transform: $args;
+	-o-transform: $args;
+}
+
+@mixin transform-origin($args) {
+	transform-origin: $args;
+	-webkit-transform-origin: $args;
+	-moz-transform-origin: $args;
+	-ms-transform-origin: $args;
+	-o-transform-origin: $args;
+}
+
+@mixin transition-delay($args) {
+	transition-delay: $args;
+	-webkit-transition-delay: $args;
+	-moz-transition-delay: $args;
+	-ms-transition-delay: $args;
+	-o-transition-delay: $args;
+}
+
+@mixin transition($args...) {
+	transition: $args;
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+}
+
+
+// CSS Text
+@mixin text($font-family, $font-size, $line-height, $color, $text-transform: none) {
+	font-family: $font-family;
+	font-size: $font-size;
+	line-height: $line-height;
+	color: $color;
+	text-transform: $text-transform;
+}
+
+// Middle Object
+@mixin mid($flex: false) {
+	@if $flex ==false {
+		top: 50%;
+		left: 50%;
+		@include transform(translate(-50%, -50%));
+		position: absolute;
+	}
+
+	@else {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+// Frame Img
+@mixin frameimg($w, $h: $w) {
+	width: $w;
+	aspect-ratio: $w/$h;
+	position: relative;
+	overflow: hidden;
+}
+
+// Middle Img
+@mixin midimg {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+// FullScreen
+@mixin fullscreen($fixed: false) {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+
+	@if $fixed {
+		position: fixed;
+	}
+
+	@else {
+		position: absolute;
+	}
+}
+
+// Visible
+@mixin visible($param: 1) {
+	@if $param ==1 {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+	}
+
+	@else {
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
+}
+
+// Size Div
+@mixin size($w, $h: $w, $circle: false) {
+	width: $w;
+	height: $h;
+
+	@if $circle {
+		border-radius: 100%;
+	}
+}
+
+// Overflow Text Dots
+@mixin overtext($lines) {
+	display: -webkit-inline-box;
+	-webkit-line-clamp: $lines;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+// Customize Scroll Bar
+@mixin customscroll($width: 6px, $bgTrack: #FF3B3B, $bgThumb: var(--second-cl)) {
+	&::-webkit-scrollbar {
+		width: $width;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $bgThumb;
+		border-radius: 100px;
+	}
+}
+
+@mixin hideScrollBar() {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+@mixin flexsb {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@mixin colGrid($numcols: 12) {
+	display: grid;
+	grid-template-columns: repeat($numcols, 1fr);
+	gap: var(--gap)
+}
+
+@mixin colStartEnd($s: 1, $e: 1) {
+	display: grid;
+	grid-column-start: $s;
+	grid-column-end: $e;
+}
+
+@mixin hoverUnderline($color: #fff, $dur: 0.35s, $cur: cubic-bezier(0.59, 0.29, 0.15, 0.93)) {
+	width: fit-content;
+	position: relative;
+	white-space: nowrap;
+
+	&:after {
+		content: '';
+		width: 100%;
+		height: 2px;
+		border-radius: 50px;
+		background: $color;
+		position: absolute;
+		bottom: -1px;
+		left: 0;
+		@include transform(scaleX(0));
+		@include transform-origin(right);
+		@include transition($dur $cur transform);
+	}
+
+	&:hover,
+	&.--active {
+		&:after {
+			@include transform-origin(left);
+			@include transform(scaleX(1));
+		}
+	}
+}
+
+@mixin selection($bg, $color: #000) {
+	::selection {
+		background: $bg;
+		color: $color;
+	}
+
+	::-moz-selection {
+		background: $bg;
+		color: $color;
+	}
+}
+
+@mixin bgModal() {
+	@include size(100%, 100vh);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 250;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(0deg, rgba(44, 27, 0, 0.9) 0%, rgba(253, 187, 45, 0.9) 100%);
+	will-change: transform, opacity;
+}

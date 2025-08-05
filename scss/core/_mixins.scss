@@ -1,0 +1,185 @@
+// MIXINS
+
+@mixin desktop {
+	@media(max-width: $md-max) {
+		@content
+	}
+}
+
+@mixin tablet {
+	@media(max-width: $sm-max) {
+		@content
+	}
+}
+
+@mixin mobile {
+	@media(max-width: $xs-max) {
+		@content
+	}
+}
+
+@mixin mobile-xxs {
+	@media(max-width: $xxs-max) {
+		@content
+	}
+}
+
+@mixin sc-break($args) {
+	@media(max-width: $args) {
+		@content
+	}
+}
+
+
+@mixin css3($atitude, $value) {
+	#{$atitude}: $value;
+	-webkit-#{$atitude}: $value;
+	-moz-#{$atitude}: $value;
+	-o-#{$atitude}: $value;
+}
+
+$box-shadow-box: 1px 4px 27px -5px rgba(0, 0, 0, 0.30);
+
+@mixin box-shadow() {
+	-webkit-box-shadow: $box-shadow-box;
+	-moz-box-shadow: $box-shadow-box;
+	box-shadow: $box-shadow-box;
+}
+
+@mixin br($radius) {
+	border-radius: $radius;
+	background-clip: padding-box;
+	/* stops bg color from leaking outside the border: */
+}
+
+@mixin font-size($size: 12, $base: 16) {
+	font-size: $size + px;
+	font-size: ($size / $base) * 1rem;
+}
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};
+}
+
+@mixin transform($args) {
+	transform: $args;
+	-webkit-transform: $args;
+	-o-transform: $args;
+}
+
+@mixin transform-rotate($args) {
+	transform: rotate($args);
+	-webkit-transform: rotate($args);
+	-o-transform: rotate($args);
+}
+
+@mixin transform-scale($args) {
+	transform: scale($args);
+	-webkit-transform: scale($args);
+	-o-transform: scale($args);
+}
+
+@mixin transform-origin($args) {
+	transform-origin: $args;
+	-webkit-transform-origin: $args;
+	-o-transform-origin: $args;
+}
+
+@mixin transition-delay($args) {
+	transition-delay: $args;
+	-webkit-transition-delay: $args;
+	-o-transition-delay: $args;
+}
+
+@mixin transition($args) {
+	transition: $args;
+	-webkit-transition: $args;
+	-o-transition: $args;
+}
+
+@mixin transition-timing($args...) {
+	-webkit-transition-timing-function: $args;
+	-moz-transition-timing-function: $args;
+	-o-transition-timing-function: $args;
+	transition-timing-function: $args;
+	/* custom */
+}
+
+@mixin gradient-green() {
+	background: rgba(163, 205, 72, 1);
+	background: -moz-linear-gradient(top, rgba(163, 205, 72, 1) 0%, rgba(121, 174, 6, 1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(163, 205, 72, 1)), color-stop(100%, rgba(121, 174, 6, 1)));
+	background: -webkit-linear-gradient(top, rgba(163, 205, 72, 1) 0%, rgba(121, 174, 6, 1) 100%);
+	background: -o-linear-gradient(top, rgba(163, 205, 72, 1) 0%, rgba(121, 174, 6, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(163, 205, 72, 1) 0%, rgba(121, 174, 6, 1) 100%);
+	background: linear-gradient(to bottom, rgba(163, 205, 72, 1) 0%, rgba(121, 174, 6, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a3cd48', endColorstr='#79ae06', GradientType=0);
+}
+
+@mixin text($font-size, $font-family, $line-height, $color, $text-transform) {
+	font-size: $font-size;
+	font-family: $font-family;
+	line-height: $line-height;
+	color: $color;
+	text-transform: $text-transform;
+}
+
+@mixin mid() {
+	top: 50%;
+	left: 50%;
+	@include transform(translateX(-50%) translateY(-50%));
+	position: absolute;
+}
+
+@mixin mid-flex() {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	-webkit-align-items: center;
+	justify-content: center;
+	-webkit-justify-content: center;
+}
+
+@mixin overtext($args) {
+	display: -webkit-inline-box;
+	-webkit-line-clamp: $args;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+// PLACEHOLDERS
+%text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

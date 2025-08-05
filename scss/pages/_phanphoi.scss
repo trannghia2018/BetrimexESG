@@ -1,0 +1,769 @@
+.phanphoi{
+	section{
+		display: flex;
+		.boxleft{
+			width: 460px;
+			flex-shrink:0;
+			float: left;
+			.tab-w{
+				width: 100%;
+				display: flex;
+				.tab{
+					width: 50%;
+					height: 50px;
+					cursor: pointer;
+					@include mid-flex();
+					background: #004b8e;
+					@include text(24px,ic,36px,$yellow2-cl,none);
+					@include transition($t);
+					&:hover,&.active{
+						background: #003768;
+						color:#fff;
+						@include transition($t);
+					}
+				}
+			}
+			.country{
+				width: 100%;
+				height: 50px;
+				display: none;
+				&.is-show{
+					display: flex;
+				}
+				.cleft{
+					width: 55%;
+					height: 100%;
+					background: #42a624;
+					@include mid-flex();
+					@include text(14px,ab,24px,#fff,none);
+				}
+				.cright{
+					width: 45%;
+					height: 100%;
+					background: #207905;
+					.selectbox{
+						width: 100%;
+						height: 100%;
+						position: relative;
+						.head{
+							width: 100%;
+							height: 100%;
+							cursor: pointer;
+							.inner{
+								height: 100%;
+								display: flex;
+								align-items: center;
+								padding:0 20px;
+								position: relative;
+								&:after{
+									content: "\f0d7";
+									font-family: fa;
+									font-size: 22px;
+									position: absolute;
+									right:15px;
+									color:$yellow2-cl;
+									@include transition($t);
+								}
+								span{
+									@include text(14px,ab,18px,#fff,none);
+									@include transition($t);
+								}
+							}
+						}
+						ul{
+							width: 100%;
+							height: 320px;
+							overflow-y: scroll;
+							background: #207905;
+							padding: 0;
+							margin: auto;
+							position: absolute;
+							left:0;
+							top:50px;
+							z-index: 100;
+							-webkit-box-shadow: 2px 6px 19px 0px rgba(0,0,0,0.26);
+							-moz-box-shadow: 2px 6px 19px 0px rgba(0,0,0,0.26);
+							box-shadow: 2px 6px 19px 0px rgba(0,0,0,0.26);
+							left:0px;
+							opacity: 0;
+							visibility: hidden;
+							&::-webkit-scrollbar-track
+							{
+								border-radius: 10px;
+								background-color: #42a624;
+							}
+
+							&::-webkit-scrollbar
+							{
+								width: 4px;
+								background-color: #135000;
+							}
+
+							&::-webkit-scrollbar-thumb
+							{
+								border-radius: 10px;
+								background-color: #135000;
+							}
+							@include transform(translateY(20px));
+							@include transition($t);
+							li{
+								list-style: none;
+								cursor: pointer;
+								padding:0 20px;
+								height: 40px;
+								display: flex;
+								align-items: center;
+								background-size: contain;
+								@include text(14px,fmain,18px,#fff,none);
+								border-bottom: 1px solid #166b00;
+								@include transition($t);
+							 	&:last-child{
+					                background: none;
+					            }
+								span{
+									@include text(14px,ab,18px,#fff,none);
+								}
+								&:hover{
+									background: #42a624;
+									@include transition($t);
+				                }
+							}
+							&.is-show{
+								opacity: 1;
+								visibility: visible;
+								@include transform(translateY(0));
+								@include transition($t);
+							}
+						}
+					}
+				}
+			}
+			.chosebox{
+				height: 50px;
+				background: #6bb20e;
+				@include mid-flex();
+				.checkcontainer{
+					margin: 0 15px;
+					@include text(14px,ab,18px,#fff,none);
+					height: 22px;
+				    display: flex;
+				    align-items: center;
+				    padding-left: 30px;
+				    .radiobtn{
+				    	background: #fff;
+				    }
+				}
+			}
+			.area{
+				height: 50px;
+				border-bottom: 1px solid #ccc;
+				display: none;
+				&.is-show{
+					display: flex;
+				}
+				.select-area{
+					width: 100%;
+					height: 100%;
+					position: relative;
+					border-right: 1px solid #ccc;
+					&:last-child{
+						border-right:0;
+					}
+					.head{
+						width: 100%;
+						height: 100%;
+						cursor: pointer;
+						.inner{
+							height: 100%;
+							display: flex;
+							align-items: center;
+							padding:0 15px;
+							position: relative;
+							&:after{
+								content: "\f0d7";
+								font-family: fa;
+								font-size: 22px;
+								position: absolute;
+								right:10px;
+								color:#6bb20e;
+								@include transition($t);
+							}
+							span{
+								@include text(14px,fmain,18px,$text-cl,none);
+								@include transition($t);
+							}
+						}
+					}
+					ul{
+						width: 100%;
+						height: 240px;
+						overflow-y: scroll;
+						background: #fff;
+						padding: 0;
+						margin: auto;
+						position: absolute;
+						left:0;
+						top:50px;
+						z-index: 100;
+						-webkit-box-shadow: 2px 6px 19px 0px rgba(0,0,0,0.26);
+						-moz-box-shadow: 2px 6px 19px 0px rgba(0,0,0,0.26);
+						box-shadow: 2px 6px 19px 0px rgba(0,0,0,0.26);
+						left:0px;
+						opacity: 0;
+						visibility: hidden;
+						&::-webkit-scrollbar-track{
+							border-radius: 10px;
+							background-color: #f4f4f4;
+						}
+						&::-webkit-scrollbar{
+							width: 4px;
+							background-color: #ccc;
+						}
+
+						&::-webkit-scrollbar-thumb{
+							border-radius: 10px;
+							background-color: #ccc;
+						}
+						@include transform(translateY(20px));
+						@include transition($t);
+						li{
+							list-style: none;
+							cursor: pointer;
+							padding:0 15px;
+							height: 40px;
+							display: flex;
+							align-items: center;
+							background-size: contain;
+							@include text(14px,fmain,18px,$text-cl,none);
+							border-bottom: 1px solid #ccc;
+							@include transition($t);
+						 	&:last-child{
+				                background: none;
+				            }
+							span{
+								@include text(14px,ab,18px,#fff,none);
+							}
+							&:hover{
+								background: #ddd;
+								@include transition($t);
+			                }
+						}
+						&.is-show{
+							opacity: 1;
+							visibility: visible;
+							@include transform(translateY(0));
+							@include transition($t);
+						}
+					}
+				}
+			}
+			.result{
+				height: 450px;
+				overflow: hidden;
+				padding: 10px 15px 15px 15px;
+				.inner{
+					padding-right: 15px;
+					height: 100%;
+					overflow-y: scroll;
+					@include transition($t);
+					&::-webkit-scrollbar-track{
+						border-radius: 10px;
+						background-color: #f4f4f4;
+					}
+					&::-webkit-scrollbar{
+						width: 6px;
+						background-color: #ccc;
+					}
+
+					&::-webkit-scrollbar-thumb{
+						border-radius: 10px;
+						background-color: #ccc;
+					}
+					.item{
+						border-bottom: 1px solid #ccc;
+						padding: 15px;
+						cursor: pointer;
+						&:last-child{
+							border-bottom: 0;
+						}
+						h3{
+							@include text(14px,ab,28px,$text-cl,uppercase);
+						}
+						p{
+							@include text($fz-text,fmain,24px,$text-cl,none);
+							margin-bottom: 0;
+						}
+						&:hover,&.active{
+							background: #dcdcdc;
+							@include transition($t);
+						}
+					}
+				}
+			}
+		}
+		.boxright{
+			width: 100vw;
+			.popup{
+				position: absolute;
+				z-index: 400;
+				background: #fff;
+				padding: 30px;
+				border-radius: 15px;
+				-webkit-box-shadow: 2px 6px 19px 0px rgba(0,0,0,0.26);
+				-moz-box-shadow: 2px 6px 19px 0px rgba(0,0,0,0.26);
+				box-shadow: 2px 6px 19px 0px rgba(0,0,0,0.26);
+				h3{
+					@include text(14px,ab,28px,$text-cl,uppercase);
+				}
+				p{
+					@include text($fz-text,fmain,24px,$text-cl,none);
+					margin-bottom: 0;
+				}
+				.btnclose{
+					position: absolute;
+					top:10px;
+					right: 10px;
+					cursor: pointer;
+					@include transition($t);
+					i{
+						color:#8ac241;
+						font-size: 18px;
+					}
+					&:hover,&:focus{
+						opacity: 0.7;
+						@include transition($t);
+					}
+				}
+			}
+			.map{
+				height: 100%;
+			}
+		}
+		@include desktop{
+			.boxleft{
+				width: 35%;
+				.country{
+					.cright{
+						.selectbox{
+							.head{
+								padding: 0 15px;
+								.inner{
+									padding: 0px;
+									&:after{
+										right: 0;
+									}
+								}
+							}
+							.body{
+								ul{
+									li{
+										padding: 0 15px;
+									}
+								}
+							}
+						}
+					}
+				}
+				.area{
+					.select-area{
+						.head{
+							.inner{
+								&:after{
+									right: 4px;
+								}
+							}
+						}
+					}
+				}
+				.result{
+					padding: 10px 15px 15px 0px;
+					.inner{
+						.item{
+							padding: 15px;
+						}
+					}
+				}
+			}
+			.boxright{
+				width: 65%;
+			}
+		}
+		@include tablet{
+			.boxleft{
+				width: 45%;
+				.chosebox{
+					.checkcontainer{
+						height: 20px;
+					}
+				}
+			}
+			.boxright{
+				width: 55%;
+			}
+		}
+		@include mobile{
+			flex-direction: column-reverse;
+			.boxleft{
+				width: 100%;
+				.chosebox{
+					.checkcontainer{
+						height: 20px;
+						margin: 0 12px;
+					}
+				}
+				.result{
+					padding:0;
+					height: auto;
+					.inner{
+						padding-right: 0;
+						.item{
+							padding: 10px 15px;
+							h3{
+								font-size: 12px;
+								line-height: 24px;
+							}
+						}
+					}
+				}
+				
+			}
+			.boxright{
+				width: 100%;
+				height: 280px;
+				.popup{
+					padding: 15px;
+					h3{
+						font-size: 12px;
+						line-height: 24px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.phanphoionline{
+	section{
+		padding: 50px 0;
+		background: url(../img/bg-phanphoi.jpg) no-repeat center;
+		background-size: cover;
+		.tab-switch{
+			margin-bottom: 50px;
+		}
+		.list-brands{
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			margin: -10px;
+			.item{
+				width: 218px;
+				height: 218px;
+				background: #fff;
+				border:2px solid #97d717;
+				margin: 10px;
+				overflow: hidden;
+				a{
+					width: 100%;
+					height: 100%;
+					@include mid-flex();
+					position: relative;
+					overflow: hidden;
+					img{
+						@include transform(translateY(0px));
+						@include transition($t); 
+					}
+					.btn-buy{
+						width: 100%;
+						height: 50px;
+						background:#97d717;
+						position: absolute;
+						bottom:0;
+						left: 0;
+						z-index: 10;
+						@include mid-flex();
+						@include text(14px,ab,24px,#fff,uppercase);
+						@include transform(translateY(50px));
+						@include transition($t); 
+						&:hover{
+							background:$green-cl-text;
+							@include transition($t); 
+						}
+					}
+					&:hover,&:focus{
+						img{
+							@include transform(translateY(-30px));
+							@include transition($t); 
+						}
+						.btn-buy{
+							@include transform(translateY(0));
+							@include transition($t); 
+						}
+					}
+				}
+			}
+		}
+		.controls{
+			display: flex;
+			justify-content: center;
+			margin-top: 40px;
+			.btn-control{
+				margin: 0 10px;
+			}
+		}
+		&.quocte{
+			.selectcountry{
+				border-radius:30px;
+				border:2px solid #fff;
+				-webkit-box-shadow: 4px 7px 33px -2px rgba(0,0,0,0.41);
+				-moz-box-shadow: 4px 7px 33px -2px rgba(0,0,0,0.41);
+				box-shadow: 4px 7px 33px -2px rgba(0,0,0,0.41);
+				.headbox{
+					height: 50px;
+					@include text(24px,ic,24px,$yellow2-cl,uppercase);
+					@include mid-flex();
+					border-top-left-radius:30px;
+					border-top-right-radius:30px;
+					background: rgba(11,84,147,1);
+					background: -moz-linear-gradient(top, rgba(11,84,147,1) 0%, rgba(2,54,99,1) 100%);
+					background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(11,84,147,1)), color-stop(100%, rgba(2,54,99,1)));
+					background: -webkit-linear-gradient(top, rgba(11,84,147,1) 0%, rgba(2,54,99,1) 100%);
+					background: -o-linear-gradient(top, rgba(11,84,147,1) 0%, rgba(2,54,99,1) 100%);
+					background: -ms-linear-gradient(top, rgba(11,84,147,1) 0%, rgba(2,54,99,1) 100%);
+					background: linear-gradient(to bottom, rgba(11,84,147,1) 0%, rgba(2,54,99,1) 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b5493', endColorstr='#023663', GradientType=0 );
+				}
+				.selectbox{
+					width: 100%;
+					height: 50px;
+					position: relative;
+					background: #6bb20e;
+					.head{
+						width: 100%;
+						height: 100%;
+						cursor: pointer;
+						.inner{
+							height: 100%;
+							display: flex;
+							align-items: center;
+							padding:0 20px;
+							position: relative;
+							&:after{
+								content: "\f0d7";
+								font-family: fa;
+								font-size: 22px;
+								position: absolute;
+								right:15px;
+								color:$yellow2-cl;
+								@include transition($t);
+							}
+							span{
+								@include text(14px,ab,18px,#fff,uppercase);
+								@include transition($t);
+							}
+						}
+					}
+					ul{
+						width: 100%;
+						height: 320px;
+						overflow-y: scroll;
+						background: #207905;
+						padding: 0;
+						margin: auto;
+						position: absolute;
+						left:0;
+						top:50px;
+						z-index: 100;
+						-webkit-box-shadow: 2px 6px 19px 0px rgba(0,0,0,0.26);
+						-moz-box-shadow: 2px 6px 19px 0px rgba(0,0,0,0.26);
+						box-shadow: 2px 6px 19px 0px rgba(0,0,0,0.26);
+						left:0px;
+						opacity: 0;
+						visibility: hidden;
+						&::-webkit-scrollbar-track
+						{
+							border-radius: 10px;
+							background-color: #42a624;
+						}
+
+						&::-webkit-scrollbar
+						{
+							width: 4px;
+							background-color: #135000;
+						}
+
+						&::-webkit-scrollbar-thumb
+						{
+							border-radius: 10px;
+							background-color: #135000;
+						}
+						@include transform(translateY(20px));
+						@include transition($t);
+						li{
+							list-style: none;
+							cursor: pointer;
+							padding:0 20px;
+							height: 50px;
+							display: flex;
+							align-items: center;
+							background-size: contain;
+							@include text(14px,fmain,18px,#fff,uppercase);
+							border-bottom: 1px solid #166b00;
+							@include transition($t);
+						 	&:last-child{
+				                background: none;
+				            }
+							span{
+								@include text(14px,ab,18px,#fff,uppercase);
+							}
+							&:hover{
+								background: #6bb20e;
+								@include transition($t);
+			                }
+						}
+						&.is-show{
+							opacity: 1;
+							visibility: visible;
+							@include transform(translateY(0));
+							@include transition($t);
+						}
+					}
+				}
+				.flagbox{
+					height: 170px;
+					background: #fff;
+					padding: 30px;
+					@include mid-flex();
+					border-bottom-left-radius:25px;
+					border-bottom-right-radius:25px;
+					img{
+						max-width: 120px;
+					}
+				}
+			}
+			.linecenter{
+				height: 500px;
+				background: url(../img/line-pd.png) repeat-y center top;
+			}
+			.boxright{
+				width: 760px;
+			}
+			.list-brands{
+				justify-content: flex-start;
+			}
+		}
+		@include desktop{
+			.list-brands{
+				.item{
+					width: 190px;
+					height: 190px;
+				}
+			}
+			&.quocte{
+				.boxright{
+					width: 640px;
+				}
+			}
+		}
+		@include tablet{
+			.list-brands{
+				.item{
+					width: 170px;
+					height: 170px;
+				}
+			}
+			&.quocte{
+				.boxleft{
+					width: 300px;
+				}
+				.linecenter{
+					display: none;
+				}
+				.boxright{
+					width: 58.3333333333%;
+				}
+				.linecenter{
+					background-position: right top;
+				}
+				.list-brands{
+					justify-content: center;
+				}
+			}
+		}
+		@include mobile{
+			padding: 40px 0;
+			.tab-switch{
+				margin-bottom: 30px;
+			}
+			.list-brands{
+				.item{
+					width: 160px;
+					height: 160px;
+					margin: 5px;
+					a{
+						img{
+							padding: 20px;
+							@include transform(translateY(-20px));
+						}
+						.btn-buy{
+							height: 40px;
+							@include transform(translateY(0px));
+						}
+						&:hover,&:focus{
+							img{
+								@include transform(translateY(-20px));
+							}
+						}
+					}
+				}
+			}
+			&.quocte{
+				.boxleft{
+					width: 100%;
+					.selectcountry{
+						width: 280px;
+						margin: auto;
+						.headbox{
+							height: 40px;
+						}
+						.selectbox{
+							height: 40px;
+							.body{
+								ul{
+									top:40px;
+									li{
+										height: 40px;
+									}
+								}
+							}
+						}
+						.flagbox{
+							padding: 15px;
+							height: 120px;
+							img{
+								max-width: 80px;
+							}
+						}
+					}
+				}
+				.boxright{
+					width: 100%;
+					margin-top: 40px;
+				}
+			}
+		}
+		@include sc-break(360px){
+			.list-brands{
+				width: 100%;
+				.item{
+					width: 120px;
+					height: 120px;
+					a{
+						.btn-buy{
+							font-size: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

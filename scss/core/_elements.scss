@@ -1,0 +1,1693 @@
+img {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    max-width: 100%;
+
+    &.center {
+        margin-left: auto;
+        margin-right: auto;
+        display: table;
+    }
+
+    &.border {
+        border: 5px solid #f4f4f4;
+        -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    @include mobile {
+        &.border {
+            border: 3px solid #f4f4f4;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: none !important;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.slick-slide,
+.slick-slide:focus * {
+    outline: none !important;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.text-main {
+    @include text(14px, arial, 24px, $text-cl, none);
+    margin: 10px 0;
+
+    &.white {
+        color: #fff;
+    }
+}
+
+.text-main2 {
+    @include text($fz-text, fmain, 24px, $text-cl, none);
+}
+
+.title-main {
+    @include text(36px, fmain, 46px, $main-cl, none);
+
+    &.white {
+        color: #fff;
+    }
+
+    @include mobile {
+        font-size: 32px;
+        line-height: 42px;
+    }
+}
+
+.title-main2 {
+    @include text(90px, ic, 80px, $main-cl, uppercase);
+
+    &.green {
+        color: $green-cl-text;
+    }
+
+    @include mobile {
+        font-size: 60px;
+        line-height: 50px;
+    }
+}
+
+.title-box {
+    .btn-main {
+        margin-top: 20px;
+    }
+
+    .title-main {
+        position: relative;
+        margin-bottom: 15px;
+
+        &:before {
+            content: '';
+            width: 28px;
+            height: 4px;
+            flex-shrink: 0;
+            bottom: 6px;
+            position: absolute;
+        }
+    }
+
+    .title-main2 {
+        position: relative;
+
+        &:before {
+            content: '';
+            width: 28px;
+            height: 4px;
+            flex-shrink: 0;
+            position: absolute;
+            bottom: 20px;
+        }
+    }
+
+    &.t-left {
+        text-align: left;
+
+        .title-main,
+        .title-main2 {
+            padding-left: 40px;
+
+            &:before {
+                background: $green-cl-text;
+                margin-right: 25px;
+                left: 0;
+            }
+        }
+
+        .btn-main {
+            float: left;
+        }
+    }
+
+    &.t-right {
+        text-align: right;
+
+        .title-main {
+            padding-right: 40px;
+
+            &:before {
+                background: $green-cl-text;
+                margin-left: 25px;
+                right: 0;
+            }
+        }
+
+        .title-main2 {
+            padding-right: 40px;
+
+            &:before {
+                background: $main-cl;
+                margin-left: 25px;
+                right: 0;
+            }
+        }
+
+        .btn-main {
+            float: right;
+        }
+    }
+
+    &.t-center {
+        width: 54%;
+        text-align: center;
+        margin: auto;
+
+        .title-main {
+            padding-left: 0px;
+
+            &:before {
+                display: none;
+            }
+        }
+    }
+
+    &.white {
+        .title-main {
+            color: #fff;
+        }
+
+        .des {
+            color: #fff;
+        }
+    }
+
+    @include tablet {
+        &.t-center {
+            width: 80%;
+            margin: auto;
+        }
+    }
+
+    @include mobile {
+        &.t-center {
+            width: 90%;
+        }
+
+        .title-main {
+            margin-bottom: 10px;
+        }
+
+        .title-main2 {
+            &:before {
+                bottom: 12px;
+            }
+        }
+
+        .btn-main {
+            margin-top: 15px;
+        }
+    }
+}
+
+.btn-main {
+    text-align: center;
+    background: $yellow-cl;
+    padding: 6px 25px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: table;
+    @include text(18px, ic, 26px, #fff, uppercase);
+    letter-spacing: 1px;
+    @include transition($t);
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background: $red-cl-dark;
+        color: #fff;
+        @include transition($t);
+    }
+
+    &.white {
+        background: none;
+        border: 2px solid #fff;
+        border-radius: 30px;
+
+        &:hover,
+        &:focus {
+            background: #fff;
+            border: 2px solid #fff;
+            color: $main-cl;
+            @include transition($t);
+        }
+    }
+
+    &.black {
+        background: none;
+        border: 2px solid $text-cl;
+        border-radius: 30px;
+        color: $text-cl;
+        @include transition(0.6s);
+
+        &:hover,
+        &:focus {
+            background: $green-cl;
+            border: 2px solid $green-cl;
+            color: #fff;
+            @include transition($t);
+        }
+    }
+
+    &.green {
+        @include gradient-green();
+        border: 2px solid #91b003;
+        border-radius: 30px;
+
+        &:hover,
+        &:focus {
+            background: rgba(192, 240, 79, 1);
+            background: -moz-linear-gradient(top, rgba(192, 240, 79, 1) 0%, rgba(107, 148, 10, 1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(192, 240, 79, 1)), color-stop(100%, rgba(107, 148, 10, 1)));
+            background: -webkit-linear-gradient(top, rgba(192, 240, 79, 1) 0%, rgba(107, 148, 10, 1) 100%);
+            background: -o-linear-gradient(top, rgba(192, 240, 79, 1) 0%, rgba(107, 148, 10, 1) 100%);
+            background: -ms-linear-gradient(top, rgba(192, 240, 79, 1) 0%, rgba(107, 148, 10, 1) 100%);
+            background: linear-gradient(to bottom, rgba(192, 240, 79, 1) 0%, rgba(107, 148, 10, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c0f04f', endColorstr='#6b940a', GradientType=0);
+            color: #fff;
+            @include transition($t);
+        }
+    }
+
+    &.blue {
+        background: rgba(0, 83, 160, 1);
+        background: -moz-linear-gradient(top, rgba(0, 83, 160, 1) 0%, rgba(1, 58, 112, 1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 83, 160, 1)), color-stop(100%, rgba(1, 58, 112, 1)));
+        background: -webkit-linear-gradient(top, rgba(0, 83, 160, 1) 0%, rgba(1, 58, 112, 1) 100%);
+        background: -o-linear-gradient(top, rgba(0, 83, 160, 1) 0%, rgba(1, 58, 112, 1) 100%);
+        background: -ms-linear-gradient(top, rgba(0, 83, 160, 1) 0%, rgba(1, 58, 112, 1) 100%);
+        background: linear-gradient(to bottom, rgba(0, 83, 160, 1) 0%, rgba(1, 58, 112, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0053a0', endColorstr='#013a70', GradientType=0);
+        border: 2px solid #e5c805;
+        border-radius: 30px;
+
+        &:hover,
+        &:focus {
+            background: rgba(6, 120, 207, 1);
+            background: -moz-linear-gradient(top, rgba(6, 120, 207, 1) 0%, rgba(4, 66, 125, 1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(6, 120, 207, 1)), color-stop(100%, rgba(4, 66, 125, 1)));
+            background: -webkit-linear-gradient(top, rgba(6, 120, 207, 1) 0%, rgba(4, 66, 125, 1) 100%);
+            background: -o-linear-gradient(top, rgba(6, 120, 207, 1) 0%, rgba(4, 66, 125, 1) 100%);
+            background: -ms-linear-gradient(top, rgba(6, 120, 207, 1) 0%, rgba(4, 66, 125, 1) 100%);
+            background: linear-gradient(to bottom, rgba(6, 120, 207, 1) 0%, rgba(4, 66, 125, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0678cf', endColorstr='#04427d', GradientType=0);
+            color: #fff;
+            @include transition($t);
+        }
+    }
+
+    &.big {
+        padding: 14px 34px;
+        font-size: 28px;
+        white-space: nowrap;
+
+        @include mobile {
+            padding: 10px 28px;
+            font-size: 24px;
+        }
+    }
+}
+
+.btn-viewmore {
+    @include text(11px, arial, 24px, $text-cl, uppercase);
+    font-weight: bold;
+    @include transition($t);
+
+    &:after {
+        content: "\f0da";
+        font-family: fa;
+        font-size: 15px;
+        line-height: 12px;
+        color: $text-cl;
+        bottom: -1px;
+        right: 0;
+        position: relative;
+        margin-left: 12px;
+        @include transition($t);
+    }
+
+    &:hover,
+    &:focus {
+        color: $main-cl;
+        @include transition($t);
+
+        &:after {
+            color: $main-cl;
+            right: -4px;
+            @include transition($t);
+        }
+    }
+}
+
+.btn-viewmore2 {
+    width: 219px;
+    height: 39px;
+    background: url(../img/bg-btn-green.png) no-repeat center;
+    background-size: contain;
+    @include mid-flex();
+    @include text(16px, ic, 26px, $yellow-cl, uppercase);
+    letter-spacing: 1px;
+    position: relative;
+    @include transition($t);
+
+    &:after {
+        content: "";
+        width: 53px;
+        height: 68px;
+        background: url(../img/btn-leaf.png) no-repeat center;
+        position: absolute;
+        right: -20px;
+        bottom: -10px;
+        @include transition($t);
+    }
+
+    &:hover {
+        &:after {
+            @include transition($t);
+            @include transform(rotateY(45deg));
+        }
+
+        color:$blue-cl;
+        @include transition(0.6s);
+    }
+}
+
+.btn-backall {
+    width: 220px;
+    height: 39px;
+    background: url(../img/bg-btn-white.png) no-repeat center;
+    background-size: contain;
+    position: relative;
+    margin: auto;
+    @include mid-flex();
+    @include text(12px, ab, 18px, $blue-cl-dark, uppercase);
+    @include transition($t);
+
+    &:before {
+        content: "";
+        width: 34px;
+        height: 61px;
+        background: url(../img/arrowback.png ) no-repeat center;
+        position: absolute;
+        left: 50%;
+        @include transform(translateX(-50%) translateY(-65px));
+        @include transition($t);
+    }
+
+    &:hover {
+        color: $main-cl;
+        @include transition($t);
+
+        &:before {
+            @include transform(translateX(-50%) translateY(-80px));
+            @include transition($t);
+        }
+    }
+}
+
+.i-down {
+    position: absolute;
+    left: 50%;
+    @include transform(translateY(-50%) translateY(-120px) scale(0.7));
+    opacity: 0;
+    @include transition($t);
+
+    &.is-show {
+        opacity: 1;
+        @include transform(translateY(-80px) scale(1));
+        @include transition($t);
+    }
+
+    @include tablet {
+        width: 25px;
+        height: 69px;
+
+        &.is-show {
+            @include transform(translateY(-60px) scale(1));
+        }
+    }
+
+    @include mobile {
+        &.is-show {
+            @include transform(translateY(-40px) scale(1));
+        }
+    }
+}
+
+.tab-switch {
+    display: flex;
+    @include br(40px);
+    position: relative;
+    overflow: hidden;
+
+    a {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+        @include transition($t);
+    }
+
+    &:after {
+        content: "";
+        width: 50%;
+        height: 100%;
+        @include br(40px);
+        position: absolute;
+        @include transition($t);
+        @include transform(translateX(0%));
+    }
+
+    &.style1 {
+        width: 130px;
+        height: 50px;
+        border: 1px solid #fff;
+
+        a {
+            @include text(20px, rb, 28px, #fff, uppercase);
+
+            &.active {
+                color: #fff;
+                @include transition($t);
+            }
+        }
+
+        &:after {
+            background: $green-cl;
+        }
+    }
+
+    &.style2 {
+        width: 360px;
+        height: 36px;
+        border: 1px solid $green-cl;
+        margin: auto;
+        display: flex;
+
+        a {
+            @include text(18px, ic, 26px, $text-cl, uppercase);
+
+            &:hover {
+                color: $main-cl;
+                @include transition($t);
+            }
+
+            &.active {
+                color: $main-cl;
+                @include transition($t);
+            }
+        }
+
+        &:after {
+            background: $green-cl;
+        }
+    }
+
+    &.style3 {
+        width: 420px;
+        height: 45px;
+        border: 1px solid $green-cl;
+        margin: auto;
+
+        a {
+            @include text(32px, ic, 36px, #fff, uppercase);
+            @include br(40px);
+
+            &:hover {
+                color: $yellow2-cl;
+                @include transition($t);
+            }
+
+            &.active {
+                color: $yellow2-cl;
+                background: rgba(11, 84, 147, 1);
+                background: -moz-linear-gradient(top, rgba(11, 84, 147, 1) 0%, rgba(2, 54, 99, 1) 100%);
+                background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(11, 84, 147, 1)), color-stop(100%, rgba(2, 54, 99, 1)));
+                background: -webkit-linear-gradient(top, rgba(11, 84, 147, 1) 0%, rgba(2, 54, 99, 1) 100%);
+                background: -o-linear-gradient(top, rgba(11, 84, 147, 1) 0%, rgba(2, 54, 99, 1) 100%);
+                background: -ms-linear-gradient(top, rgba(11, 84, 147, 1) 0%, rgba(2, 54, 99, 1) 100%);
+                background: linear-gradient(to bottom, rgba(11, 84, 147, 1) 0%, rgba(2, 54, 99, 1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0b5493', endColorstr='#023663', GradientType=0);
+                @include transition($t);
+                border: 1px solid $green-cl;
+            }
+        }
+    }
+
+    &.changed {
+        &:after {
+            @include transform(translateX(100%));
+            @include transition($t);
+        }
+    }
+
+    @include mobile {
+        &.style2 {
+            width: 280px;
+        }
+
+        &.style3 {
+            width: 280px;
+            height: 40px;
+
+            a {
+                font-size: 24px;
+                line-height: 24px;
+            }
+        }
+    }
+}
+
+.social {
+    display: table;
+
+    .list-social {
+        display: table;
+        margin: auto;
+    }
+
+    a {
+        width: 45px;
+        height: 45px;
+        @include mid-flex();
+        float: left;
+        margin-right: 8px;
+        @include transition($t);
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        i {
+            color: $main-cl;
+        }
+
+        &.fb {
+            img {
+                width: 9px;
+            }
+        }
+
+        &.youtube {
+            img {
+                width: 21px;
+            }
+        }
+
+        &.mail {
+            img {
+                width: 20px;
+            }
+        }
+    }
+
+    h5 {
+        @include text(18px, ic, 26px, $text-cl, uppercase);
+        letter-spacing: 0.5px;
+        margin-bottom: 5px;
+    }
+
+    &.style1 {
+        a {
+            border: 1px solid $text-cl;
+            background: $green-cl;
+
+            &:hover,
+            &:focus {
+                background: #c5ea79;
+                @include transition($t);
+            }
+        }
+    }
+
+    &.style2 {
+        a {
+            border: 1px solid #fff;
+
+            &:hover,
+            &:focus {
+                background: $blue-cl;
+                @include transition($t);
+            }
+        }
+    }
+
+    @include tablet {
+        a {
+            width: 37px;
+            height: 37px;
+            margin-right: 4px;
+        }
+    }
+}
+
+.btn-control-w {
+    position: relative;
+}
+
+.controls {
+    &.center {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+
+        .btn-control {
+            margin: 0 10px;
+        }
+
+        @include mobile {
+            &.center {
+                .btn-control {
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+}
+
+.btn-control {
+    width: 78px;
+    height: 78px;
+    background: url(../img/btn-ctr.png) no-repeat center;
+    background-size: contain;
+    @include mid-flex();
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+
+    &:before {
+        height: 30px;
+        font-family: fa;
+        font-size: 50px;
+        color: #fff;
+        position: relative;
+        top: 2px;
+        @include transition($t);
+    }
+
+    &:after {
+        content: '';
+        width: 35px;
+        height: 4px;
+        background: #fff;
+        position: absolute;
+        z-index: 0;
+        @include transition($t);
+    }
+
+    &.btn-prev {
+        &:before {
+            content: "\f104";
+            left: -3px;
+            @include transition($t);
+        }
+
+        &:after {
+            @include transform(translateX(60px));
+            @include transition(0.2s);
+        }
+    }
+
+    &.btn-next {
+        &:before {
+            content: "\f105";
+            right: -3px;
+            @include transition($t);
+        }
+
+        &:after {
+            @include transform(translateX(-60px));
+            @include transition(0.2s);
+        }
+    }
+
+    &:hover {
+        &.btn-prev {
+            &:before {
+                left: -12px;
+                top: 2px;
+                font-size: 46px;
+                @include transition($t);
+            }
+
+            &:after {
+                @include transform(translateX(0px));
+                @include transition(0.2s);
+            }
+        }
+
+        &.btn-next {
+            &:before {
+                right: -12px;
+                top: 2px;
+                font-size: 46px;
+                @include transition($t);
+            }
+
+            &:after {
+                @include transform(translateX(0px));
+                @include transition(0.2s);
+            }
+        }
+    }
+
+    @include mobile {
+        width: 60px;
+        height: 60px;
+
+        &:before {
+            height: 27px;
+            font-size: 42px;
+        }
+
+        &:after {
+            width: 24px;
+            height: 3px;
+        }
+
+        &:hover {
+            &.btn-prev {
+                &:before {
+                    left: -8px;
+                    top: 1px;
+                    font-size: 32px;
+                }
+            }
+
+            &.btn-next {
+                &:before {
+                    right: -8px;
+                    top: 1px;
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+}
+
+.btn-control2 {
+    width: 54px;
+    height: 63px;
+    background-size: contain;
+    @include mid-flex();
+    cursor: pointer;
+    position: relative;
+    @include transition($t);
+
+    &.btn-prev {
+        background: url(../img/arrow-prev.png) no-repeat center;
+        background-size: contain;
+    }
+
+    &.btn-next {
+        background: url(../img/arrow-next.png) no-repeat center;
+        background-size: contain;
+    }
+
+    &:hover {
+        opacity: 0.8;
+        @include transition($t);
+    }
+
+    @include mobile {
+        width: 35px;
+        height: 41px;
+    }
+}
+
+.list-article {
+    .thumb {
+        margin: 15px 0;
+        position: relative;
+        z-index: 10;
+    }
+
+    .line-mid {
+        width: 100%;
+        height: 4px;
+        margin: 15px 0;
+        background: url(../img/line-thumb.png) repeat-x center;
+        float: left;
+    }
+}
+
+.thumb {
+    a {
+        .img {
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                @include transform(scale(1));
+                @include transition(0.6s);
+            }
+        }
+
+        .text-w {
+            padding: 10px 15px;
+        }
+    }
+
+    &.style1 {
+        a {
+            .text-w {
+                position: relative;
+                overflow: hidden;
+                @include transition($t);
+
+                .title {
+                    height: 50px;
+                    @include text(16px, fmain, 24px, $text-cl, none);
+                    @include overtext(2);
+                }
+
+                .des {
+                    @include text(14px, arial, 22px, $text-cl, none);
+                    @include overtext(3);
+                    position: relative;
+                    z-index: 10;
+                    margin-bottom: 14px;
+                }
+
+                &.text-style2 {
+                    background: #fff;
+                    position: relative;
+
+                    &:before {
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        left: 0;
+                        top: 0;
+                        position: absolute;
+                        background: rgba(7, 84, 152, 1);
+                        background: -moz-linear-gradient(top, rgba(7, 84, 152, 1) 0%, rgba(0, 57, 106, 1) 100%);
+                        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(7, 84, 152, 1)), color-stop(100%, rgba(0, 57, 106, 1)));
+                        background: -webkit-linear-gradient(top, rgba(7, 84, 152, 1) 0%, rgba(0, 57, 106, 1) 100%);
+                        background: -o-linear-gradient(top, rgba(7, 84, 152, 1) 0%, rgba(0, 57, 106, 1) 100%);
+                        background: -ms-linear-gradient(top, rgba(7, 84, 152, 1) 0%, rgba(0, 57, 106, 1) 100%);
+                        background: linear-gradient(to bottom, rgba(7, 84, 152, 1) 0%, rgba(0, 57, 106, 1) 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#075498', endColorstr='#00396a', GradientType=0);
+                        opacity: 0;
+                        @include transition($t);
+                    }
+
+                    .title {
+                        @include text(14px, arial, 20px, $green-cl-text, uppercase);
+                        font-weight: bold;
+                        padding-top: 8px;
+                        position: relative;
+                        z-index: 10;
+                    }
+
+                    .btn-viewmore {
+                        position: relative;
+                        z-index: 10;
+
+                        &:after {
+                            color: $green-cl-text;
+                        }
+
+                        &:hover {
+                            color: $green-cl-text;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            a {
+                .img {
+                    img {
+                        @include transform(scale(1.1));
+                        @include transition(0.6s);
+                    }
+                }
+
+                .text-w {
+                    background: #fff;
+                    @include transition($t);
+
+                    &.text-style2 {
+                        &:before {
+                            opacity: 1;
+                            @include transition($t);
+                        }
+
+                        .title,
+                        .des,
+                        .btn-viewmore {
+                            color: #fff;
+                            @include transition($t);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.style2 {
+        .img {
+            overflow: hidden;
+            border: 4px solid #fff;
+            -webkit-box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.3);
+
+            img {
+                width: 100%;
+                @include transform(scale(1));
+                @include transition(0.6s);
+            }
+
+            &:hover,
+            &:focus {
+                img {
+                    @include transform(scale(1.1));
+                    @include transition(0.6s);
+                }
+            }
+        }
+
+        .text-w {
+            margin-top: 20px;
+
+            .date {
+                @include text(16px, ab, 24px, $text-cl, none);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &:after {
+                    content: "";
+                    width: 75%;
+                    height: 5px;
+                    background: url(../img/line-yellow2.png) repeat-x center;
+                    display: block;
+                }
+            }
+
+            .title {
+                a {
+                    @include text(18px, ab, 28px, $text-cl, uppercase);
+                    margin: 15px 0;
+                    display: block;
+                    @include transition(0.6s);
+
+                    &:hover,
+                    &:focus {
+                        color: $green-cl-text;
+                        @include transition($t);
+                    }
+                }
+            }
+
+            .des {
+                @include text($fz-text, fmain, 24px, $text-cl, none);
+            }
+
+            .btn-main {
+                display: table;
+                float: left;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    @include tablet {
+        &.style1 {
+            a {
+                .text-w {
+                    .title {
+                        height: 72px;
+                        @include overtext(3);
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        &.style1 {
+            a {
+                .text-w {
+                    .title {
+                        height: auto;
+                        @include overtext(initial);
+                        margin-bottom: 6px;
+                    }
+
+                    .des {
+                        height: auto;
+                        // @include overtext(initial);
+                    }
+                }
+            }
+        }
+
+        &.style2 {
+            .text-w {
+                .date {
+                    font-size: 14px;
+                    line-height: 22px;
+
+                    &:after {
+                        width: 78%;
+                    }
+                }
+
+                .title {
+                    a {
+                        font-size: 16px;
+                        line-height: 26px;
+                        margin: 10px 0;
+                    }
+                }
+
+                .btn-main {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+.modal {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.banner-top {
+    width: 100%;
+    height: 500px;
+    position: relative;
+
+    &:after {
+        content: "";
+        width: 100%;
+        height: 60%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        opacity: 0.4;
+        background: rgba(222, 222, 222, 0);
+        background: -moz-linear-gradient(top, rgba(222, 222, 222, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(222, 222, 222, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
+        background: -webkit-linear-gradient(top, rgba(222, 222, 222, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        background: -o-linear-gradient(top, rgba(222, 222, 222, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        background: -ms-linear-gradient(top, rgba(222, 222, 222, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        background: linear-gradient(to bottom, rgba(222, 222, 222, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dedede', endColorstr='#000000', GradientType=0);
+    }
+
+    .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .textbox {
+        width: 480px;
+        position: relative;
+        z-index: 300;
+
+        .title {
+            @include text(40px, ab, 46px, #f8efe0, uppercase);
+            white-space: nowrap;
+        }
+
+        .title2 {
+            @include text(90px, ic, 90px, $yellow2-cl, uppercase);
+        }
+
+        .text {
+            color: #fff;
+            padding-left: 60px;
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+
+            &:before {
+                content: "";
+                width: 7px;
+                min-height: 90px;
+                display: block;
+                background: url(../img/line-yellow.png) repeat-y center;
+                flex-shrink: 0;
+            }
+
+            p {
+                padding-left: 30px;
+                font-family: fmain;
+            }
+        }
+    }
+
+    &.bt2 {
+        height: 670px;
+
+        &:before {
+            content: "";
+            width: 3px;
+            height: 150px;
+            background: url(../img/line-white.png) repeat-y center;
+            position: absolute;
+            left: 50%;
+            bottom: 0px;
+            @include transform(translateX(-50%));
+            z-index: 100;
+        }
+
+        .textbox {
+            width: 720px;
+        }
+    }
+
+    @include tablet {
+        height: 360px;
+
+        .textbox {
+            width: 530px;
+
+            .title {
+                white-space: normal;
+            }
+
+            .title2 {
+                font-size: 60px;
+                line-height: 60px;
+            }
+        }
+
+        &.bt2 {
+            height: 460px;
+
+            &:before {
+                height: 80px;
+            }
+
+            .textbox {
+                width: 540px;
+            }
+        }
+    }
+
+    @include mobile {
+        height: 300px;
+
+        .textbox {
+            width: 80%;
+
+            .title {
+                font-size: 26px;
+                line-height: 34px;
+            }
+
+            .title2 {
+                font-size: 44px;
+                line-height: 44px;
+            }
+
+            .text {
+                padding-top: 10px;
+                padding-left: 30px;
+            }
+        }
+
+        &.bt2 {
+            height: 380px;
+
+            .textbox {
+                width: 540px;
+            }
+        }
+    }
+
+    @include mobile-xxs {
+        height: 260px;
+
+        .textbox {
+            width: 100%;
+
+            .text {
+                padding-top: 10px;
+                padding-left: 20px;
+
+                p {
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+}
+
+.paging {
+    padding: 0;
+    display: table;
+    margin: 40px auto 20px auto;
+
+    li {
+        list-style: none;
+        float: left;
+        width: 29px;
+        height: 32px;
+        margin: 0 7px;
+        position: relative;
+
+        &:after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: url(../img/paging.png) no-repeat center;
+            background-size: cover;
+            opacity: 0;
+            @include transition($t);
+        }
+
+        a {
+            padding: 3px 12px;
+            @include mid-flex();
+            @include text(16px, ab, 24px, $text-cl, none);
+            z-index: 10;
+            position: relative;
+
+        }
+
+        &:hover,
+        &.current {
+            &:after {
+                opacity: 1;
+                @include transition($t);
+            }
+        }
+
+        &:first-child,
+        &:last-child {
+            width: auto;
+        }
+    }
+
+    @include mobile {
+        li {
+            margin: 0 2px;
+
+            a {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.boxline {
+    .t-small {
+        @include text(55px, ic, 52px, $main-cl, uppercase);
+        margin-bottom: 10px;
+    }
+
+    .text {
+        @include text($fz-text, fmain, 28px, $text-cl, none);
+
+        &.white {
+            color: #fff;
+        }
+    }
+
+    &.hasline {
+        background: url(../img/line-yellow.png) repeat-y left top;
+        padding-left: 25px;
+    }
+
+    .t-line {
+        background: url(../img/line-yellow.png) repeat-y left top;
+        padding-left: 25px;
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.t-right {
+            background: url(../img/line-yellow.png) repeat-y right top;
+            padding-left: 0;
+            padding-right: 25px;
+            text-align: right;
+
+            @include mobile {
+                background: url(../img/line-yellow.png) repeat-y left top;
+                padding-left: 20px;
+                padding-right: 0;
+                text-align: left;
+            }
+        }
+    }
+
+    &.style2 {
+        display: flex;
+
+        .t-small {
+            width: 30%;
+            flex-shrink: 0;
+            @include text(22px, ab, 32px, $text-cl, uppercase);
+
+            &.green {
+                width: 220px;
+                color: $green-cl-text;
+                font-size: 28px;
+                line-height: 40px;
+
+                @include mobile {
+                    width: 100%;
+                    font-size: 24px;
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+
+    @include tablet {
+        .t-small {
+            font-size: 44px;
+            line-height: 44px;
+        }
+
+        &.hasline {
+            padding-left: 20px;
+        }
+    }
+
+    @include mobile {
+        .t-small {
+            font-size: 38px;
+            line-height: 38px;
+            margin-bottom: 5px;
+        }
+
+        .t-line {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        &.hasline {
+            padding-left: 20px;
+        }
+
+        &.style2 {
+            display: block;
+
+            .t-small {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+// radio checkbox
+.checkcontainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 17px;
+    margin-bottom: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .radiobtn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 22px;
+        width: 22px;
+        background-color: #e3e3e3;
+        border-radius: 50%;
+        @include transition($t);
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            top: 4px;
+            left: 4px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #6bb20e;
+            @include transition($t);
+        }
+    }
+
+    &.yellow {
+        .radiobtn {
+            &:after {
+                background: #ffd800;
+            }
+        }
+    }
+
+    @include tablet {
+        .radiobtn {
+            width: 20px;
+            height: 20px;
+
+            &:after {
+                top: 4px;
+                left: 4px;
+                width: 12px;
+                height: 12px;
+            }
+        }
+    }
+}
+
+.checkcontainer input:checked~.radiobtn:after {
+    display: block;
+}
+
+.title-board {
+    width: auto;
+    height: 140px;
+    display: table;
+    background: url(../img/wood-board2.png) repeat-x center bottom;
+    margin: -7px auto 20px auto;
+    text-align: center;
+    position: relative;
+
+    &:before {
+        content: "";
+        width: 49px;
+        height: 100%;
+        background: url(../img/wood-board-left.png) no-repeat center;
+        background-size: contain;
+        position: absolute;
+        bottom: -6px;
+        left: -49px;
+    }
+
+    &:after {
+        content: "";
+        width: 49px;
+        height: 100%;
+        background: url(../img/wood-board-right.png) no-repeat center;
+        background-size: contain;
+        position: absolute;
+        bottom: -6px;
+        right: -49px;
+    }
+
+    .leaf {
+        position: absolute;
+        right: -70px;
+        top: 35px;
+        z-index: 10;
+    }
+
+    .title {
+        @include text(26px, ab, 36px, #fff, none);
+        padding: 72px 10px 10px 10px;
+        white-space: nowrap;
+        position: relative;
+        z-index: 20;
+
+        &:after {
+            content: "";
+            width: 100%;
+            height: 5px;
+            background: url(../img/linewhite5.png) repeat-x center;
+            display: block;
+            margin: 6px auto;
+        }
+    }
+
+    @include mobile {
+        width: 320px;
+        height: 94px;
+        background: url(../img/wood-board-m.png) no-repeat center top;
+        background-size: contain;
+        margin: auto;
+        left: 0;
+        right: 0;
+
+        &:before {
+            display: none;
+        }
+
+        .title {
+            width: 310px;
+            margin: 4px auto;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-size: 18px;
+            line-height: 22px;
+            padding: 0 10px;
+            margin: 0;
+            top: 42px;
+            position: relative;
+            left: 50%;
+            @include transform(translateX(-50%));
+            white-space: inherit;
+
+            &:after {
+                width: 80%;
+                margin: 5px auto 0 auto;
+            }
+        }
+
+        .leaf {
+            display: none;
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+
+    @include sc-break(320px) {
+        width: 300px;
+
+        .title {
+            width: 300px;
+            font-size: 16px;
+        }
+    }
+}
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    list-style-type: none;
+    position: absolute;
+    bottom: 30px;
+    padding: 0;
+    left: 50%;
+    @include transform(translateX(-50%));
+
+    li {
+        display: inline-block;
+        margin: 0 4px;
+
+        &.slick-active {
+            button {
+                background: $green-cl;
+            }
+        }
+    }
+
+    button {
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        border: 2px solid $green-cl;
+        border-radius: 100%;
+        background: none;
+        text-indent: -9999px;
+        outline: 0;
+    }
+}
+
+.video_style1 {
+    width: 630px;
+    // height: 375px;
+    width: 100%;
+    height: auto;
+    border: 5px solid #fff;
+    -webkit-box-shadow: 2px 2px 30px -10px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 2px 2px 30px -10px rgba(0, 0, 0, 0.7);
+    box-shadow: 2px 2px 30px -10px rgba(0, 0, 0, 0.7);
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+        width: 100%;
+    }
+
+    position: relative;
+
+    &:before {
+        content: "";
+        width: 100px;
+        height: 100px;
+        background: url(../img/btn_play.png) no-repeat center;
+        @include mid();
+        z-index: 100;
+    }
+
+    &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        @include mid();
+        background: #000;
+        opacity: 0;
+        @include transition($t);
+        z-index: 20;
+    }
+
+    &:hover {
+        &:after {
+            opacity: 0.3;
+            @include transition($t);
+        }
+    }
+}

@@ -1,0 +1,114 @@
+.article-detail{
+	.content-detail{
+		position: relative;
+		margin:50px 0 80px 0;
+		.content-w{
+			padding: 0 90px;
+			.title{
+				@include text(40px,ab,54px,$main-cl,uppercase);
+			}
+			.line{
+				margin: 10px auto;
+			}
+			.date{
+				@include text(14px,arial,22px,#797979,none);
+				font-style:italic;
+				padding-top: 8px;
+			}
+			.content{
+				padding-top: 20px;
+				font-size: 14px;
+				line-height: 24px;
+				img{
+					display: block;
+					margin:10px auto;
+				}
+			}
+		}
+		.social{
+			position: absolute;
+			top: 17px;
+			&.fixed{
+				position: fixed;
+				top: 70px;
+				opacity: 1;
+				@include transition($t); 
+			}
+			a{
+				float: inherit;
+				margin-bottom: 5px;
+				margin-right: 0;
+				border:1px solid $main-cl;
+				i{
+					color:$main-cl;
+					font-size: 16px;
+				}
+			}
+		}
+	}	
+	.artilces-relate{
+		width: 100%;
+		background: #f4f3eb;
+		position: relative;
+		padding:40px 0;
+		&:before{
+			content: "";
+			width: 100%;
+			height: 52px;
+			background: url(../img/top-line2.png) repeat-x center;
+			position: absolute;
+			top:-30px;
+			left: 0;
+		}
+		.title-top{
+			@include text(68px,ic,68px,$main-cl,uppercase);
+			z-index: 200;
+			margin-bottom: 20px;
+		}
+	}
+	@include tablet{
+		.content-detail{
+			.content-w{
+				padding: 0 45px;
+				.title{
+					font-size: 34px;
+					line-height: 44px;
+				}
+			}
+		}
+		.artilces-relate{
+			.title-top{
+				font-size: 54px;
+				line-height: 54px;
+			}
+		}
+	}
+	@include tablet{
+		.content-detail{
+			margin: 30px 0 70px 0;
+			.content-w{
+				padding: 0px;
+				.title{
+					font-size: 26px;
+    				line-height: 34px;
+				}
+			}
+		}
+		.artilces-relate{
+			padding: 20px 0 30px 0;
+			.title-top{
+				font-size: 44px;
+				line-height: 54px;
+				margin-bottom: 10px;
+			}
+		}
+	}
+	@include mobile{
+		.content-detail{
+			.social{
+				opacity: 0;
+				@include transition($t); 
+			}
+		}
+	}
+}
