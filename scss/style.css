@@ -1914,14 +1914,6 @@ section.pd {
 .main-content {
   padding: 25px 0;
 }
-header {
-  width: 100%;
-  height: 100px;
-  background: #013768;
-  position: fixed;
-  z-index: 500;
-}
-
 .menu-mobile {
   width: 100%;
   position: fixed;
@@ -2080,11 +2072,6 @@ header {
   transform: translateY(-50%) rotate(90deg);
   -webkit-transform: translateY(-50%) rotate(90deg);
   -o-transform: translateY(-50%) rotate(90deg);
-}
-
-footer {
-  height: 400px;
-  background: #1f6873;
 }
 
 .loading {
