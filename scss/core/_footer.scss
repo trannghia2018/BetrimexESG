@@ -1,4 +1,250 @@
 footer {
-    height: 400px;
-    background: #1f6873;
+    position: relative;
+    z-index: 10;
+
+    .top-ft {
+        height: 110px;
+        background: $main-cl;
+
+        .container-w {
+            height: 100%;
+
+            .row {
+                height: 100%;
+            }
+        }
+
+        .item {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            float: left;
+
+            &.info-box {
+                a {
+                    display: flex;
+                    align-items: center;
+
+                    i {
+                        width: auto;
+                        flex-shrink: 0;
+                        margin-right: 10px;
+                    }
+
+                    p {
+                        @include text(14px, arial, 20px, #fff, none);
+                        @include transition($t);
+                        margin-bottom: 0;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        p {
+                            color: $blue-cl;
+                            @include transition($t);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-ft {
+        background: $blue-cl-dark;
+
+        .bt1 {
+            width: 100%;
+            height: 385px;
+            background: url(../img/bg-ft.jpg) no-repeat top;
+            background-size: cover;
+            position: relative;
+            z-index: 10;
+            padding-top: 50px;
+            padding-bottom: 30px;
+
+            .container-w {
+                position: relative;
+            }
+
+            .inner {
+                padding-bottom: 25px;
+            }
+
+            .item {
+                h4 {
+                    @include text(16px, rb, 22px, #fff, uppercase);
+                }
+
+                .list {
+                    padding-top: 5px;
+
+                    a {
+                        display: block;
+                        @include text(12px, arial, 16px, #fff, none);
+                        padding: 4px 0;
+                        @include transition($t);
+
+                        &:hover,
+                        &:focus {
+                            color: $main-cl;
+                        }
+                    }
+                }
+            }
+
+            .backtotop {
+                position: absolute;
+                bottom: 10px;
+                right: -100px;
+                cursor: pointer;
+                @include transform-rotate(90deg);
+
+                &:before {
+                    content: "\f02b";
+                    font-family: fa;
+                    color: #fff;
+                    font-size: 14px;
+                    @include transform-rotate(-45deg);
+                    position: absolute;
+                    left: -32px;
+                    top: 0;
+                    @include transition(0.3s);
+                }
+
+                span {
+                    @include text(11px, arial, 16px, #fff, uppercase);
+                }
+
+                &:hover,
+                &:focus {
+                    &:before {
+                        left: -45px;
+                        @include transition(0.3s);
+                    }
+                }
+            }
+        }
+
+        .bt2 {
+            width: 100%;
+            text-align: center;
+
+            p {
+                @include text(12px, arial, 16px, #54c3d4, none);
+                padding: 14px 0;
+                margin: 0;
+            }
+        }
+    }
+
+    @include sc-break(1440px) {
+        .bottom-ft {
+            .bt1 {
+                .backtotop {
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    @include desktop {
+        .bottom-ft {
+            .bt1 {
+                .backtotop {
+                    bottom: 20px;
+                    right: -3%;
+                }
+            }
+        }
+    }
+
+    @include tablet {
+        .top-ft {
+            .item {
+                justify-content: center;
+
+                &.info-box {
+                    a {
+                        text-align: center;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        i {
+                            margin-right: 0;
+                            margin-bottom: 10px;
+
+                            img {
+                                width: 80%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        .top-ft {
+            height: 100px;
+
+            .logo-ft {
+                display: block;
+                margin: auto;
+            }
+        }
+
+        .bottom-ft {
+            .bt1 {
+                height: 220px;
+                padding-top: 20px;
+                padding-bottom: 10px;
+                background-size: 183%;
+                background: url(../img/bg-ft-m.jpg);
+
+                .container-w {
+                    height: 100%;
+                }
+
+                .backtotop {
+                    @include transform(rotate(0) translateX(-50%));
+                    left: 50%;
+                    bottom: 0px;
+                    text-align: center;
+
+                    &:before {
+                        @include transform(rotate(45deg) translateX(-50%));
+                        left: 50%;
+                        top: -15px;
+                    }
+
+                    span {
+                        font-size: 10px;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        &:before {
+                            @include transform(rotate(45deg) translateX(-50%));
+                            left: 50%;
+                            top: -20px;
+                        }
+                    }
+                }
+
+                .bt1-m {
+                    height: 100%;
+
+                    p {
+                        @include text(12px, arial, 24px, #fff, none);
+                    }
+
+                    .social {
+                        display: table;
+                        margin: 15px auto;
+                    }
+                }
+            }
+        }
+    }
 }

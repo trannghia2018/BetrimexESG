@@ -28,13 +28,13 @@ $(document).ready(function () {
             $('.topmenu').toggleClass('is-submenu');
         },
         changedScroll: function () {
-            var h_header = header.height();
-            if ($(window).scrollTop() > h_header) {
+            if ($(window).scrollTop() > 5) {
                 $('.fix-top-menu').addClass('is-scroll');
                 header.addClass('is-scroll');
             } else {
-                header.removeClass('is-scroll');
                 $('.fix-top-menu').removeClass('is-scroll');
+                header.removeClass('is-scroll');
+
             }
         }
     }

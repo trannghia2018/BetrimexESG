@@ -815,11 +815,13 @@ img {
     }
 
     @include desktop {
+        padding-bottom: 160px;
+
         &__sliders {
             .btn-control {
                 position: absolute;
                 top: initial;
-                bottom: -10px;
+                bottom: -90px;
                 @include transform(initial);
 
                 &.btn-prev {
