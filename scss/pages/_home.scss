@@ -31,10 +31,10 @@
 				.item {
 					padding: 30px;
 					position: absolute;
-					top: 20%;
+					top: 30px;
 
 					.title {
-						@include text(32px, fmain, 44px, #fff, none);
+						@include text(28px, fmain, 36px, #fff, none);
 						@include transform(translateY(15px));
 						opacity: 0;
 						visibility: hidden;

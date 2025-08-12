@@ -1,63 +1,70 @@
-.media{
+.media {
 	background: url(../img/leaf-media.png) no-repeat bottom left;
-	.coconut-media{
+
+	.coconut-media {
 		position: absolute;
-		bottom:100px;
+		bottom: 100px;
 		left: 30px;
 	}
-	.nav-left{
+
+	.nav-left {
 		width: 100%;
 		height: auto;
 		background: #fff;
-		border-radius:24px;
+		border-radius: 24px;
 		overflow: hidden;
-		border:2px solid #fff;
-		-webkit-box-shadow: 0px 0px 42px -8px rgba(0,0,0,0.59);
-		-moz-box-shadow: 0px 0px 42px -8px rgba(0,0,0,0.59);
-		box-shadow: 0px 0px 42px -8px rgba(0,0,0,0.59);
+		border: 2px solid #fff;
+		-webkit-box-shadow: 0px 0px 42px -8px rgba(0, 0, 0, 0.59);
+		-moz-box-shadow: 0px 0px 42px -8px rgba(0, 0, 0, 0.59);
+		box-shadow: 0px 0px 42px -8px rgba(0, 0, 0, 0.59);
 		margin-top: 15px;
 		position: relative;
 		z-index: 100;
-		.head{
+
+		.head {
 			width: 100%;
 			height: 60px;
-			background: rgba(10,81,144,1);
-			background: -moz-linear-gradient(top, rgba(10,81,144,1) 0%, rgba(0,49,92,1) 100%);
-			background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(10,81,144,1)), color-stop(100%, rgba(0,49,92,1)));
-			background: -webkit-linear-gradient(top, rgba(10,81,144,1) 0%, rgba(0,49,92,1) 100%);
-			background: -o-linear-gradient(top, rgba(10,81,144,1) 0%, rgba(0,49,92,1) 100%);
-			background: -ms-linear-gradient(top, rgba(10,81,144,1) 0%, rgba(0,49,92,1) 100%);
-			background: linear-gradient(to bottom, rgba(10,81,144,1) 0%, rgba(0,49,92,1) 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a5190', endColorstr='#00315c', GradientType=0 );
-			padding:15px 30px;
+			background: rgba(10, 81, 144, 1);
+			background: -moz-linear-gradient(top, rgba(10, 81, 144, 1) 0%, rgba(0, 49, 92, 1) 100%);
+			background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(10, 81, 144, 1)), color-stop(100%, rgba(0, 49, 92, 1)));
+			background: -webkit-linear-gradient(top, rgba(10, 81, 144, 1) 0%, rgba(0, 49, 92, 1) 100%);
+			background: -o-linear-gradient(top, rgba(10, 81, 144, 1) 0%, rgba(0, 49, 92, 1) 100%);
+			background: -ms-linear-gradient(top, rgba(10, 81, 144, 1) 0%, rgba(0, 49, 92, 1) 100%);
+			background: linear-gradient(to bottom, rgba(10, 81, 144, 1) 0%, rgba(0, 49, 92, 1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0a5190', endColorstr='#00315c', GradientType=0);
+			padding: 15px 30px;
 			display: flex;
 			align-items: center;
 			position: relative;
-			@include text(24px,ic,34px,$yellow2-cl,uppercase);
+			@include text(24px, ic, 34px, $yellow2-cl, uppercase);
 		}
-		ul{
+
+		ul {
 			width: 100%;
-			padding:0;
+			padding: 0;
 			margin: auto;
-			li{
+
+			li {
 				width: 100%;
 				height: 60px;
 				list-style-type: none;
 				@include transition($t);
 				border-bottom: 1px solid #acacac;
-				a{
+
+				a {
 					width: 100%;
 					height: 100%;
-					padding:0 30px;
+					padding: 0 30px;
 					display: flex;
 					align-items: center;
 					position: relative;
-					@include text(14px,ab,18px,$text-cl,none);
+					@include text(14px, ab, 18px, $text-cl, none);
 					@include transition($t);
-					&:after{
+
+					&:after {
 						content: "\f04b";
 						font-family: fa;
-						color:$yellow2-cl;
+						color: $yellow2-cl;
 						font-size: 12px;
 						position: absolute;
 						right: 20px;
@@ -65,52 +72,65 @@
 						@include transform(translateX(-10px));
 						@include transition($t);
 					}
-					&:hover,&.active{
-						color:#fff;
+
+					&:hover,
+					&.active {
+						color: #fff;
 						background: $green-cl-dark;
 						@include transition($t);
-						&:after{
+
+						&:after {
 							opacity: 1;
 							@include transform(translateX(0px));
 							@include transition($t);
 						}
 					}
 				}
-				&:hover,&.active{
+
+				&:hover,
+				&.active {
 					background: $green-cl-dark;
 					@include transition($t);
-					a{
-						color:#fff;
+
+					a {
+						color: #fff;
 						@include transition($t);
-						&:after{
+
+						&:after {
 							opacity: 1;
 							@include transform(translateX(0px));
 							@include transition($t);
 						}
 					}
 				}
-				&:last-child{
+
+				&:last-child {
 					border-bottom: 0;
 				}
 			}
 		}
 	}
-	.boxright{
+
+	.boxright {
 		position: relative;
 		z-index: 100;
 		margin-top: 15px;
 	}
-	.list-tnxh{
+
+	.list-tnxh {
 		padding-left: 30px;
-		.item{
+
+		.item {
 			display: flex;
 			margin-bottom: 25px;
-			.icon{
+
+			.icon {
 				width: 110px;
 				flex-shrink: 0;
 			}
-			.text{
-				h4{
+
+			.text {
+				h4 {
 					color: #77a900;
 					margin-bottom: 10px;
 					font-size: 14px;
@@ -119,37 +139,55 @@
 			}
 		}
 	}
-	.text_w_gl{
+
+	.text_w_gl {
 		padding: 15px 0;
-		.title,a{
-			@include text(14px,ab,18px,$text-cl,uppercase);
+
+		.title,
+		a {
+			@include text(14px, ab, 18px, $text-cl, uppercase);
 			margin-bottom: 8px;
 		}
-		p{
+
+		p {
 			color: #797979;
 		}
 	}
-	.text_w_detail{
+
+	.text_w_detail {
 		padding: 20px 0;
-		.title{
-			@include text(24px,ab,32px,$green-cl-dark,uppercase);
+
+		.title {
+			@include text(24px, ab, 32px, $green-cl-dark, uppercase);
 			margin-bottom: 10px;
 		}
-		.datetime{
-			@include text(14px,arial,22px,#797979,none);
+
+		.datetime {
+			@include text(14px, arial, 22px, #797979, none);
 			font-style: italic;
 		}
 	}
-	.gallery-media-top{
-		img{
+
+	.gallery-media-top {
+		>a {
+			aspect-ratio: 4 / 2.8;
+			display: flex;
+			overflow: hidden;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 			filter: brightness(100%);
 			-webkit-filter: brightness(100%);
 			-moz-filter: brightness(100%);
 			@include transition($t);
 		}
-		&:hover{
-			a{
-				img{
+
+		&:hover {
+			a {
+				img {
 					filter: brightness(120%);
 					-webkit-filter: brightness(120%);
 					-moz-filter: brightness(120%);
@@ -158,22 +196,35 @@
 			}
 		}
 	}
-	.gallery-media{
+
+	.gallery-media {
 		display: flex;
 		flex-wrap: wrap;
 		margin: 0 -7px;
-		.item{
+
+		.item {
 			width: 33.3333%;
 			padding: 7px;
-			img{
+
+			>a {
+				aspect-ratio: 4 / 2.8;
+				display: flex;
+				overflow: hidden;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
 				filter: brightness(100%);
 				-webkit-filter: brightness(100%);
 				-moz-filter: brightness(100%);
 				@include transition($t);
 			}
-			&.hv{
-				&:hover{
-					img{
+
+			&.hv {
+				&:hover {
+					img {
 						filter: brightness(120%);
 						-webkit-filter: brightness(120%);
 						-moz-filter: brightness(120%);
@@ -183,145 +234,177 @@
 			}
 		}
 	}
-	.slider-gallery{
-		.slick-dots{
+
+	.slider-gallery {
+		.slick-dots {
 			bottom: 0;
 		}
+
 		.slick-prev,
 		.slick-next {
 			width: 50px;
 			height: 50px;
-		    bottom: 20px;
-		    color: #fff;
-		    border: 0;
-		    background: $green-cl-dark;
-		    z-index: 1;
-		    outline: 0;
-		    position: absolute;
-		    text-indent: 0;
-		    font-size: 0;
-		    @include transition($t);
-		    &:before{
-		    	font-family: fa;
-		    	color: #fff;
-		    	font-size: 24px;
-		    	@include mid();
-		    }
-		    &.slick-prev{
-		    	bottom:0;
-		    	right: 50px;
-		    	border-right: 1px solid $green-cl-text;
-		    	&:before{
-		    		content: "\f104";
-		    	}
-		    }
-		    &.slick-next{
-		    	bottom:0;
-		    	right: 0;
-		    	&:before{
-		    		content: "\f105";
-		    	}
-		    }
-		    &:hover{
-		    	background: $green-cl-text;
-		    	@include transition($t);
-		    }
+			bottom: 20px;
+			color: #fff;
+			border: 0;
+			background: $green-cl-dark;
+			z-index: 1;
+			outline: 0;
+			position: absolute;
+			text-indent: 0;
+			font-size: 0;
+			@include transition($t);
+
+			&:before {
+				font-family: fa;
+				color: #fff;
+				font-size: 24px;
+				@include mid();
+			}
+
+			&.slick-prev {
+				bottom: 0;
+				right: 50px;
+				border-right: 1px solid $green-cl-text;
+
+				&:before {
+					content: "\f104";
+				}
+			}
+
+			&.slick-next {
+				bottom: 0;
+				right: 0;
+
+				&:before {
+					content: "\f105";
+				}
+			}
+
+			&:hover {
+				background: $green-cl-text;
+				@include transition($t);
+			}
 		}
 	}
-	.content-gallery{
+
+	.content-gallery {
 		border-bottom: 1px solid #797979;
 		padding-bottom: 20px;
 		margin-bottom: 30px;
 	}
-	.social{
+
+	.social {
 		margin-bottom: 30px;
 	}
-	@include tablet{
+
+	@include tablet {
 		background-size: 50%;
-		.nav-left{
-			.head{
+
+		.nav-left {
+			.head {
 				font-size: 22px;
 				line-height: 22px;
 				padding: 0 15px;
 			}
-			ul{
-				li{
-					a{
-						padding:0 15px;
-						&:after{
+
+			ul {
+				li {
+					a {
+						padding: 0 15px;
+
+						&:after {
 							right: 15px;
 						}
 					}
 				}
 			}
 		}
-		.list-tnxh{
+
+		.list-tnxh {
 			padding-left: 10px;
 		}
 	}
-	@include mobile{
+
+	@include mobile {
 		background-size: 60%;
-		.coconut-media{
+
+		.coconut-media {
 			display: none;
 		}
-		.nav-left{
+
+		.nav-left {
 			width: 100%;
 			max-width: 420px;
-			margin:15px auto 10px auto;
-			.head{
+			margin: 15px auto 10px auto;
+
+			.head {
 				height: 50px;
-				&:after{
+
+				&:after {
 					content: "\f0d7";
 					font-family: fa;
-					color:$yellow2-cl;
+					color: $yellow2-cl;
 					font-size: 20px;
 					position: absolute;
 					right: 15px;
 					@include transform(rotate(0));
 					@include transition(0.15s);
-				}		
-				&.is-show{
-					&:after{
+				}
+
+				&.is-show {
+					&:after {
 						@include transform(rotate(-180deg));
 						@include transition(0.15s);
 					}
-				}	
+				}
 			}
-			ul{
+
+			ul {
 				display: none;
-				li{
+
+				li {
 					height: 50px;
-					a{
-						padding:0 15px;
-						&:after{
+
+					a {
+						padding: 0 15px;
+
+						&:after {
 							right: 15px;
 						}
 					}
 				}
 			}
 		}
-		.list-tnxh{
+
+		.list-tnxh {
 			padding-left: 0px;
-			.item{
-				.icon{
+
+			.item {
+				.icon {
 					width: 80px;
 					padding-right: 20px;
 				}
 			}
 		}
-		.gallery-media{
+
+		.gallery-media {
 			margin: 0 -5px;
-			.item{
+
+			.item {
 				width: 50%;
 				padding: 5px;
 			}
 		}
-		.slider-gallery{
+
+		.slider-gallery {
+
 			.slick-prev,
 			.slick-next {
 				width: 40px;
-				height: 40px;	
-				&.slick-prev{
+				height: 40px;
+
+				&.slick-prev {
 					right: 40px;
 				}
 			}
