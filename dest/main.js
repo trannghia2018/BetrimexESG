@@ -586,6 +586,9 @@ $(document).ready(function () {
 
         // Init slick for each slider
         $(".slider").each(function () {
+            const $slider = $(this);
+            const slideCount = $slider.find(".thumb").length; // đổi .slide thành class slide item thực tế của bạn
+
             $(this).slick({
                 slidesToShow: 3,
                 slidesToScroll: 1,
@@ -606,6 +609,11 @@ $(document).ready(function () {
                     }
                 ]
             });
+
+            // Ẩn control nếu số slide < slidesToShow
+            if (slideCount < 4) {
+                $slider.closest(".scpractices__sliders").find(".btn-control").hide();
+            }
         });
 
         // Function update indicator
@@ -640,6 +648,14 @@ $(document).ready(function () {
 
             // Ensure current tab's slider is refreshed
             $articles.eq(index).find(".slider").slick("refresh");
+            // Kiểm tra và ẩn control
+            if ($articles.find(".thumb").length < 4) {
+                $prev.hide();
+                $next.hide();
+            } else {
+                $prev.show();
+                $next.show();
+            }
         });
 
         // Navigation buttons
